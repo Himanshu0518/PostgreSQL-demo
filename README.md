@@ -6,6 +6,7 @@
 ```
 
 2. run the image by giving env variables
+
 ```bash
  docker run --name postgres-db -e POSTGRES_PASSWORD=admin -p 5432:5432 -d postgres
 ```
@@ -40,16 +41,18 @@ export default db
 ```
 
 
-# Using Prisma 
+## Using Prisma 
 
 1. install prisma and prisma client
-   ```bash
-npm i prisma @prisma/client 
+   
+```bash
+   npm i prisma @prisma/client 
 ```
-2. intialise prisma 
-     ```bash
-npx prisma init
-```
+2. intialise prisma
+   
+  ```bash
+     npx prisma init
+  ```
 
 3. now read docs and do required tasks
  
