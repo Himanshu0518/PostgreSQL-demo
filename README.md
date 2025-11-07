@@ -39,3 +39,17 @@ export default db
 
 ```
 
+
+# Using Prisma 
+
+1. install prisma and prisma client
+   ```bash
+npm i prisma @prisma/client 
+```
+2. intialise prisma 
+     ```bash
+npx prisma init
+```
+
+3. now read docs and do required tasks
+ 
