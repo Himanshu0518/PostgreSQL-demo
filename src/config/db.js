@@ -1,25 +1,28 @@
-import pkg from "pg" ;
+import pkg from "pg";
 import dotenv from "dotenv";
 
 dotenv.config();
 
 const { Pool } = pkg;
 
+// Create Pool with SSL for Neon
 const db = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+  ssl: {
+    rejectUnauthorized: false // Neon requires SSL
+  },
 });
 
-
-db.on('connect', () => {
-    console.log('Postgres connected')
-})
+db.on("connect", () => {
+  console.log("Postgres connected ✅");
+});
 
 db.on("error", (err) => {
   console.error("Postgres connection error:", err.stack);
 });
 
-export default db
+export default db;
